@@ -57,4 +57,4 @@ const gendiff = (obj1, obj2) => {
   const replace = join.replace(/,/g, '\n').trim();
   return (`{\n ${replace}\n}`);
 };
-// console.log(gendiff('../__fixtures__/file1.json', '../__fixtures__/file2.json' ))
+export default gendiff;
