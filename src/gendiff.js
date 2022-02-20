@@ -45,7 +45,7 @@ const updateTypeToSymbol = (obj) => {
   return arr;
 };
 
-const gendiff = (obj1, obj2) => {
+const gendiff = (obj1 = '../__fixtures__/file1.json', obj2 = '../__fixtures__/file2.json') => {
   const readFirst = fs.readFileSync(obj1);
   const readSecond = fs.readFileSync(obj2);
   const parseData1 = JSON.parse(readFirst);
