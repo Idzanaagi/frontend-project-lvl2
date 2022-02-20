@@ -23,4 +23,4 @@ jobs:
         run: make jest
 
       - name: Run test-coverage
-        run: test-coverage
+        run: make test-coverage
