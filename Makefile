@@ -6,4 +6,4 @@ install:
 publish:
 	npm publish --dry-run
 jest: 
-	NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll
+	NODE_OPTIONS=--experimental-vm-modules npx jest
