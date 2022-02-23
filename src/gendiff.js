@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import * as fs from 'fs';
+import parsers from '../parser.js';
 
 const addType = (data1, data2) => {
   const keys = Object.keys({ ...data1, ...data2 });
@@ -45,16 +45,15 @@ const updateTypeToSymbol = (obj) => {
   return arr;
 };
 
-const gendiff = (obj1 = '__fixtures__/file1.json', obj2 = '__fixtures__/file2.json') => {
-  const readFirst = fs.readFileSync(obj1);
-  const readSecond = fs.readFileSync(obj2);
-  const parseData1 = JSON.parse(readFirst);
-  const parseData2 = JSON.parse(readSecond);
-  const typing = addType(parseData1, parseData2);
+const gendiff = (obj1, obj2) => {
+  const readFirst = parsers(obj1);
+  const readSecond = parsers(obj2);
+  const typing = addType(readFirst, readSecond);
   const typeToSymbol = updateTypeToSymbol(typing);
   typeToSymbol.toString();
   const join = typeToSymbol.join(', ');
   const replace = join.replace(/,/g, '\n').trim();
   return (`{\n ${replace}\n}`);
 };
+
 export default gendiff;
