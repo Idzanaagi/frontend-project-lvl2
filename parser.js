@@ -2,16 +2,16 @@ import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 import path from 'path';
 
-const parsers = (obj) => {
-  const split = path.extname(obj);
-  if (split === '.json') {
-    const readFirst = fs.readFileSync(obj);
-    return JSON.parse(readFirst);
+const parsingFile = (fileName) => {
+  const fileExtension = path.extname(fileName.toString());
+  if (fileExtension === '.json') {
+    const readFile = fs.readFileSync(fileName);
+    return JSON.parse(readFile);
   }
-  if (split === '.yaml' || split === '.yml') {
+  if (fileExtension === '.yaml' || fileExtension === '.yml') {
     try {
-      const doc = yaml.load(fs.readFileSync(obj));
-      return doc;
+      const readFile = yaml.load(fs.readFileSync(fileName));
+      return readFile;
     } catch (e) {
       return e;
     }
@@ -19,4 +19,4 @@ const parsers = (obj) => {
   return null;
 };
 
-export default parsers;
+export default parsingFile;

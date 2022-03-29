@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import parsers from '../parser.js';
+import parsingFile from '../parser.js';
 
 const addType = (data1, data2) => {
   const keys = Object.keys({ ...data1, ...data2 });
@@ -46,8 +46,8 @@ const updateTypeToSymbol = (obj) => {
 };
 
 const gendiff = (obj1, obj2) => {
-  const readFirst = parsers(obj1);
-  const readSecond = parsers(obj2);
+  const readFirst = parsingFile(obj1);
+  const readSecond = parsingFile(obj2);
   const typing = addType(readFirst, readSecond);
   const typeToSymbol = updateTypeToSymbol(typing);
   typeToSymbol.toString();
