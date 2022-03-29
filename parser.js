@@ -3,7 +3,7 @@ import * as yaml from 'js-yaml';
 import path from 'path';
 
 const parsingFile = (fileName) => {
-  const fileExtension = path.extname(fileName.toString());
+  const fileExtension = path.extname(String(fileName));
   if (fileExtension === '.json') {
     const readFile = fs.readFileSync(fileName);
     return JSON.parse(readFile);
