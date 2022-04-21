@@ -19,4 +19,6 @@ const parsingFile = (fileName) => {
   return null;
 };
 
+// console.log(parsingFile('./__fixtures__/file1.yaml'));
+
 export default parsingFile;
