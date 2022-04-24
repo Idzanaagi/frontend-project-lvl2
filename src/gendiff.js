@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import parsingFile from '../parser.js';
+import parsingFile from '../parsers.js';
 
 const addType = (data1, data2) => {
   const keys = Object.keys({ ...data1, ...data2 });
