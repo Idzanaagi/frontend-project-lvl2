@@ -45,7 +45,7 @@ const updateTypeToSymbol = (obj) => {
   return arr;
 };
 
-const gendiff = (obj1, obj2) => {
+const getTree = (obj1, obj2) => {
   const readFirst = parsingFile(obj1);
   const readSecond = parsingFile(obj2);
   const typing = addType(readFirst, readSecond);
@@ -56,4 +56,4 @@ const gendiff = (obj1, obj2) => {
   return (`{\n ${replace}\n}`);
 };
 
-export default gendiff;
+export default getTree;

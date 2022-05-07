@@ -6,9 +6,9 @@
     "gendiff": "bin/gendiff.js"
   },
   "description": "[![Actions Status](https://github.com/Idzanaagi/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Idzanaagi/frontend-project-lvl2/actions)",
-  "main": "src/gendiff.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   "dependencies": {
     "@jest/globals": "^28.1.0",
     "commander": "^9.0.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "jest-cli": "^28.1.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
