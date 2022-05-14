@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import getTree from '../src/index.js';
+import genDiff from '../src/compareObjects.js';
 
 const program = new Command();
 
@@ -10,9 +10,9 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .version('0.1.0')
-  .option('-f, --format <type>', 'output format')
+  .option('-f, --format <type>', 'output format', 'stylish')
   .action((filepath1, filepath2) => {
-    console.log(getTree(filepath1, filepath2, program.opts().format));
+    console.log(genDiff(filepath1, filepath2, program.opts().format));
   });
 
 program.parse();
