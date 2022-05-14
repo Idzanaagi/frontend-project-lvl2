@@ -5,4 +5,4 @@
 ### Test Coverage Badge:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7738822b0fdf09bea9cb/test_coverage)](https://codeclimate.com/github/Idzanaagi/frontend-project-lvl2/test_coverage)
 ### Asciinema:
-[![asciicast](https://asciinema.org/a/pgapf4DQfe5JkWXDUzkQzn9ap.svg)](https://asciinema.org/a/pgapf4DQfe5JkWXDUzkQzn9ap)
+[![asciicast](https://asciinema.org/a/494214.svg)](https://asciinema.org/a/494214)
