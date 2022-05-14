@@ -7,6 +7,9 @@
 ### Asciinema:
 ### Flat file comparison (JSON)
 [![asciicast](https://asciinema.org/a/MFE17Vn6y8edH8fVoq4mqsw4n.svg)](https://asciinema.org/a/MFE17Vn6y8edH8fVoq4mqsw4n)
+### Flat file comparison (yaml)
 [![asciicast](https://asciinema.org/a/PosWtQnQR8UxskRGDztbYZrgV.svg)](https://asciinema.org/a/PosWtQnQR8UxskRGDztbYZrgV)
+### Recursive comparison (JSON)
 [![asciicast](https://asciinema.org/a/RWNDfs3feco4NGuQHRSpsgTlI.svg)](https://asciinema.org/a/RWNDfs3feco4NGuQHRSpsgTlI)
+### Recursive comparison (yaml)
 [![asciicast](https://asciinema.org/a/iFkDTzxHGJDyZiXR3zsevLIeu.svg)](https://asciinema.org/a/iFkDTzxHGJDyZiXR3zsevLIeu)
