@@ -13,3 +13,5 @@
 [![asciicast](https://asciinema.org/a/baXgBI3gVy06BFamlwlhRtRTU.svg)](https://asciinema.org/a/baXgBI3gVy06BFamlwlhRtRTU)
 ### Formatter: plain
 [![asciicast](https://asciinema.org/a/qDs50eat8L2tEQSD1I4MRNsn1.svg)](https://asciinema.org/a/qDs50eat8L2tEQSD1I4MRNsn1)
+### Formatter: json
+[![asciicast](https://asciinema.org/a/gxQvRYk1LNVlZNVtjoQY2LIbM.svg)](https://asciinema.org/a/gxQvRYk1LNVlZNVtjoQY2LIbM)
