@@ -10,19 +10,15 @@ const __dirname = path.dirname(__filename);
 export const readFile = (filename) => fs.readFileSync(path.join(__dirname, '/', '__fixtures__', filename), 'utf-8');
 
 export const parsingFile = (fileName) => {
+  let result;
   const fileExtension = path.extname(fileName);
 
   if (fileExtension === '.json') {
-    return JSON.parse(readFile(fileName));
+    result = JSON.parse(readFile(fileName));
   }
 
   if (fileExtension === '.yaml' || fileExtension === '.yml') {
-    try {
-      const readContent = yaml.load(readFile(fileName));
-      return readContent;
-    } catch (e) {
-      return e;
-    }
+    result = yaml.load(readFile(fileName));
   }
-  return null;
+  return result;
 };
