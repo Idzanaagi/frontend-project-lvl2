@@ -1,4 +1,4 @@
-name: Lint
+name: CI
 
 on: push
 
@@ -20,7 +20,7 @@ jobs:
         run: make lint
 
       - name: Run tests
-        run: make jest
+        run: make test
 
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
