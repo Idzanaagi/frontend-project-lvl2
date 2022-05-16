@@ -6,7 +6,7 @@
     "gendiff": "bin/gendiff.js"
   },
   "description": "[![Actions Status](https://github.com/Idzanaagi/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Idzanaagi/frontend-project-lvl2/actions)",
-  "main": "bin/gendiff.js",
+  "main": "src/compareObjects.js",
   "scripts": {
     "test": "npx jest"
   },
