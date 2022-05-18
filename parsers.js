@@ -7,18 +7,18 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export const readFile = (filename) => fs.readFileSync(path.join(__dirname, '/', '__fixtures__', filename), 'utf-8');
+export const readFile = (filename) => fs.readFileSync(path.join(__dirname, '__fixtures__', filename), 'utf-8');
 
 export const parsingFile = (fileName) => {
-  let result;
   const fileExtension = path.extname(fileName);
-
-  if (fileExtension === '.json') {
-    result = JSON.parse(readFile(fileName));
+  switch (fileExtension) {
+    case ('.json'):
+      return JSON.parse(readFile(fileName));
+    case ('.yaml'):
+      return yaml.load(readFile(fileName));
+    case('.yml'):
+      return yaml.load(readFile(fileName))
+    default:
+      return null;
   }
-
-  if (fileExtension === '.yaml' || fileExtension === '.yml') {
-    result = yaml.load(readFile(fileName));
-  }
-  return result;
 };
