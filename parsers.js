@@ -2,10 +2,10 @@ import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 import path from 'path';
 
-const currentDir = process.cwd();
+// const currentDir = process.cwd();
 // const pathToFile = path.join(currentDir, '__fixtures__');
 
-export const readFile = (filename) => fs.readFileSync(path.join(currentDir, filename), 'utf-8');
+export const readFile = (filename) => fs.readFileSync(filename, 'utf-8');
 
 export const parsingFile = (fileName) => {
   const fileExtension = path.extname(fileName);
@@ -20,4 +20,3 @@ export const parsingFile = (fileName) => {
       return null;
   }
 };
-
