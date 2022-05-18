@@ -3,9 +3,9 @@ import genDiff from '../src/compareObjects.js';
 import { readFile } from '../parsers.js';
 
 const nestedFileResult = readFile('resultNested.txt');
-const nestedJson = genDiff('file1nested.json', 'file2nested.json');
-const nestedYaml = genDiff('file1nested.yaml', 'file2nested.yaml');
-const nestedYml = genDiff('file1nested.yml', 'file2nested.yml');
+const nestedJson = genDiff('file1.json', 'file2.json');
+const nestedYaml = genDiff('file1.yaml', 'file2.yaml');
+const nestedYml = genDiff('file1.yml', 'file2.yml');
 
 test('nestedFileComparison', () => {
   expect(nestedJson).toEqual(nestedFileResult);
@@ -14,9 +14,9 @@ test('nestedFileComparison', () => {
 });
 
 const formatterPlainResult = readFile('resultPlain.txt');
-const nestedJsonPlain = genDiff('file1nested.json', 'file2nested.json', 'plain');
-const nestedYamlPlain = genDiff('file1nested.yaml', 'file2nested.yaml', 'plain');
-const nestedYmlPlain = genDiff('file1nested.yml', 'file2nested.yml', 'plain');
+const nestedJsonPlain = genDiff('file1.json', 'file2.json', 'plain');
+const nestedYamlPlain = genDiff('file1.yaml', 'file2.yaml', 'plain');
+const nestedYmlPlain = genDiff('file1.yml', 'file2.yml', 'plain');
 
 test('formatterPlain', () => {
   expect(nestedJsonPlain).toEqual(formatterPlainResult);
@@ -25,9 +25,9 @@ test('formatterPlain', () => {
 });
 
 const formatterJsonResult = readFile('resultJSON.txt');
-const nestedJsonJSON = genDiff('file1nested.json', 'file2nested.json', 'json');
-const nestedYamlJSON = genDiff('file1nested.yaml', 'file2nested.yaml', 'json');
-const nestedYmlJSON = genDiff('file1nested.yml', 'file2nested.yml', 'json');
+const nestedJsonJSON = genDiff('file1.json', 'file2.json', 'json');
+const nestedYamlJSON = genDiff('file1.yaml', 'file2.yaml', 'json');
+const nestedYmlJSON = genDiff('file1.yml', 'file2.yml', 'json');
 
 test('formatterJson', () => {
   expect(nestedJsonJSON).toEqual(formatterJsonResult);
