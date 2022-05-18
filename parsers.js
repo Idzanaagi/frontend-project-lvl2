@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export const readFile = (filename) => fs.readFileSync(path.join(__dirname, '__fixtures__', filename), 'utf-8');
+export const readFile = (filename) => fs.readFileSync(path.join('__fixtures__', filename), 'utf-8');
 
 export const parsingFile = (fileName) => {
   const fileExtension = path.extname(fileName);
