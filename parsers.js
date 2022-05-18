@@ -6,7 +6,7 @@ const getFilePath = (file) => {
   if (path.isAbsolute(file)) {
     return file;
   }
-  return path.resolve(process.cwd(), file);
+  return path.resolve(process.cwd(), '__fixtures__', file);
 };
 
 export const readFile = (file) => fs.readFileSync(`${getFilePath(file)}`, 'utf-8');
