@@ -2,10 +2,14 @@ import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 import path from 'path';
 
-// const currentDir = process.cwd();
-// const pathToFile = path.join(currentDir, '__fixtures__');
+const getFilePath = (file) => {
+  if (path.isAbsolute(file)) {
+    return file;
+  }
+  return path.resolve(process.cwd(), file);
+};
 
-export const readFile = (filename) => fs.readFileSync(filename, 'utf-8');
+export const readFile = (file) => fs.readFileSync(`${getFilePath(file)}`, 'utf-8');
 
 export const parsingFile = (fileName) => {
   const fileExtension = path.extname(fileName);
