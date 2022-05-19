@@ -6,10 +6,7 @@ export const getFilePath = (file) => {
   if (path.isAbsolute(file)) {
     return file;
   }
-  if (!path.isAbsolute(file)) {
-    return path.resolve(process.cwd(), file);
-  }
-  return null;
+  return path.resolve(process.cwd(), file);
 };
 
 export const readFile = (file) => fs.readFileSync(`${getFilePath(file)}`, 'utf-8');
@@ -24,6 +21,6 @@ export const parsingFile = (fileName) => {
     case ('.yml'):
       return yaml.load(readFile(fileName));
     default:
-      return null;
+      throw new Error(`Unsupported file extension: '${fileName}'!`);
   }
 };

@@ -35,3 +35,15 @@ test('formatterJson', () => {
   expect(nestedYamlJSON).toEqual(formatterJsonResult);
   expect(nestedYmlJSON).toEqual(formatterJsonResult);
 });
+
+test('invalidValue', () => {
+  expect(() => {
+    genDiff('__fixtures__/file1.yml', '__fixtures__/file2.ym');
+  }).toThrow();
+});
+
+const absolutePath = getFilePath('/home/idzanagi/frontend-project-lvl2/__fixtures__/file1.json');
+
+test('getFilePath', () => {
+  expect(absolutePath).toEqual('/home/idzanagi/frontend-project-lvl2/__fixtures__/file1.json');
+});

@@ -27,7 +27,7 @@ const plain = (tree) => {
         case 'same':
           return [];
         default:
-          return null;
+          throw new Error('formatter plain implementation error');
       }
     });
     return `${formatting.join('\n')}`;

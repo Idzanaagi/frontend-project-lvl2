@@ -34,7 +34,7 @@ const stylish = (tree) => {
         case 'same':
           return `${keySpace(depth)}  ${key}: ${addFormatting(value, depth)}`;
         default:
-          return null;
+          throw new Error('formatter stylish implementation error');
       }
     });
     return `{\n${formatting.join('\n')}\n${bracketSpace(depth)}}`;
