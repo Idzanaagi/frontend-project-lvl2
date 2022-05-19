@@ -2,11 +2,14 @@ import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 import path from 'path';
 
-const getFilePath = (file) => {
+export const getFilePath = (file) => {
   if (path.isAbsolute(file)) {
     return file;
   }
-  return path.resolve(process.cwd(), '__fixtures__', file);
+  if (!path.isAbsolute(file)) {
+    return path.resolve(process.cwd(), file);
+  }
+  return null;
 };
 
 export const readFile = (file) => fs.readFileSync(`${getFilePath(file)}`, 'utf-8');

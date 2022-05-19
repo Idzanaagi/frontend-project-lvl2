@@ -1,11 +1,12 @@
 import { test, expect } from '@jest/globals';
+import * as fs from 'fs';
 import genDiff from '../src/compareObjects.js';
-import { readFile } from '../parsers.js';
+import { getFilePath } from '../parsers.js';
 
-const nestedFileResult = readFile('resultNested.txt');
-const nestedJson = genDiff('file1.json', 'file2.json');
-const nestedYaml = genDiff('file1.yaml', 'file2.yaml');
-const nestedYml = genDiff('file1.yml', 'file2.yml');
+const nestedFileResult = fs.readFileSync(`${getFilePath('__fixtures__/resultNested.txt')}`, 'utf-8');
+const nestedJson = genDiff('__fixtures__/file1.json', '__fixtures__/file2.json');
+const nestedYaml = genDiff('__fixtures__/file1.yaml', '__fixtures__/file2.yaml');
+const nestedYml = genDiff('__fixtures__/file1.yml', '__fixtures__/file2.yml');
 
 test('nestedFileComparison', () => {
   expect(nestedJson).toEqual(nestedFileResult);
@@ -13,10 +14,10 @@ test('nestedFileComparison', () => {
   expect(nestedYml).toEqual(nestedFileResult);
 });
 
-const formatterPlainResult = readFile('resultPlain.txt');
-const nestedJsonPlain = genDiff('file1.json', 'file2.json', 'plain');
-const nestedYamlPlain = genDiff('file1.yaml', 'file2.yaml', 'plain');
-const nestedYmlPlain = genDiff('file1.yml', 'file2.yml', 'plain');
+const formatterPlainResult = fs.readFileSync(`${getFilePath('__fixtures__/resultPlain.txt')}`, 'utf-8');
+const nestedJsonPlain = genDiff('__fixtures__/file1.json', '__fixtures__/file2.json', 'plain');
+const nestedYamlPlain = genDiff('__fixtures__/file1.yaml', '__fixtures__/file2.yaml', 'plain');
+const nestedYmlPlain = genDiff('__fixtures__/file1.yml', '__fixtures__/file2.yml', 'plain');
 
 test('formatterPlain', () => {
   expect(nestedJsonPlain).toEqual(formatterPlainResult);
@@ -24,10 +25,10 @@ test('formatterPlain', () => {
   expect(nestedYmlPlain).toEqual(formatterPlainResult);
 });
 
-const formatterJsonResult = readFile('resultJSON.txt');
-const nestedJsonJSON = genDiff('file1.json', 'file2.json', 'json');
-const nestedYamlJSON = genDiff('file1.yaml', 'file2.yaml', 'json');
-const nestedYmlJSON = genDiff('file1.yml', 'file2.yml', 'json');
+const formatterJsonResult = fs.readFileSync(`${getFilePath('__fixtures__/resultJSON.txt')}`, 'utf-8');
+const nestedJsonJSON = genDiff('__fixtures__/file1.json', '__fixtures__/file2.json', 'json');
+const nestedYamlJSON = genDiff('__fixtures__/file1.yaml', '__fixtures__/file2.yaml', 'json');
+const nestedYmlJSON = genDiff('__fixtures__/file1.yml', '__fixtures__/file2.yml', 'json');
 
 test('formatterJson', () => {
   expect(nestedJsonJSON).toEqual(formatterJsonResult);
