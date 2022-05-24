@@ -3,17 +3,19 @@ import stylish from './stylish.js';
 import json from './json.js';
 
 const chooseFormatters = (tree, formatName) => {
-  let formatter;
-  if (formatName === 'stylish') {
-    formatter = stylish(tree);
+  switch (formatName) {
+    case 'stylish': {
+      return stylish(tree);
+    }
+    case 'plain': {
+      return plain(tree);
+    }
+    case 'json': {
+      return json(tree);
+    }
+    default:
+      throw new Error('Uknown formatter');
   }
-  if (formatName === 'plain') {
-    formatter = plain(tree);
-  }
-  if (formatName === 'json') {
-    formatter = json(tree);
-  }
-  return formatter;
 };
 
 export default chooseFormatters;

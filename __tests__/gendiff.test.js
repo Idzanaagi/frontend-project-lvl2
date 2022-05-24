@@ -47,3 +47,9 @@ const absolutePath = getFilePath('/home/idzanagi/frontend-project-lvl2/__fixture
 test('getFilePath', () => {
   expect(absolutePath).toEqual('/home/idzanagi/frontend-project-lvl2/__fixtures__/file1.json');
 });
+
+test('invalidFormatter', () => {
+  expect(() => {
+    genDiff('__fixtures__/file1.yml', '__fixtures__/file2.yml', 'stylis');
+  }).toThrow();
+});
