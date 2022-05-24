@@ -14,6 +14,8 @@ const getDiff = (filename1, filename2, formatName = 'stylish') => {
 export default getDiff;
 
 function genDiff(filename1, filename2) {
+  const parse1 = JSON.parse(JSON.stringify(filename1));
+  const parse2 = JSON.parse(JSON.stringify(filename2))
   const buidTree = (obj1, obj2) => {
     const keys = Object.keys({ ...obj1, ...obj2 });
     const sortedKeys = _.sortedUniq(_.sortBy(keys)).map((key) => {
@@ -35,3 +37,13 @@ function genDiff(filename1, filename2) {
   };
   return buidTree(filename1, filename2);
 };
+
+/*
+const getDiff = (filename1, filename2, formatName = 'stylish') => {
+  const parseFile1 = parsingFile(filename1);
+  const parseFile2 = parsingFile(filename2);
+  const getTree = genDiff(parseFile1, parseFile2);
+  const getNewTree = chooseFormatters(getTree, formatName);
+  return getNewTree;
+};
+*/
