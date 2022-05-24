@@ -3,9 +3,6 @@ import { parsingFile } from '../parsers.js';
 import chooseFormatters from './formatters/index.js';
 
 function genDiff(filename1, filename2) {
-  const parse1 = JSON.parse(JSON.stringify(filename1));
-  const parse2 = JSON.parse(JSON.stringify(filename2));
-
   const buidTree = (obj1, obj2) => {
     const keys = Object.keys({ ...obj1, ...obj2 });
     const sortedKeys = _.sortedUniq(_.sortBy(keys)).map((key) => {
@@ -24,7 +21,7 @@ function genDiff(filename1, filename2) {
     });
     return sortedKeys;
   };
-  return buidTree(parse1, parse2);
+  return buidTree(filename1, filename2);
 }
 
 const getDiff = (filename1, filename2, formatName = 'stylish') => {
