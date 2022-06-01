@@ -1,17 +1,15 @@
 import * as yaml from 'js-yaml';
-import readFile from './readfile.js';
 
-const parsingFile = (data, format) => {
+const parseFile = (data, format) => {
   switch (format) {
     case ('json'):
-      return JSON.parse(readFile(data));
+      return JSON.parse(data);
     case ('yaml'):
-      return yaml.load(readFile(data));
     case ('yml'):
-      return yaml.load(readFile(data));
+      return yaml.load(data);
     default:
       throw new Error(`Unsupported file extension: '${data}'!`);
   }
 };
 
-export default parsingFile;
+export default parseFile;

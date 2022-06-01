@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-function genDiff(filename1, filename2) {
+function getTree(filename1, filename2) {
   const buidTree = (obj1, obj2) => {
     const keys = Object.keys({ ...obj1, ...obj2 });
     const sortedKeys = _.sortedUniq(_.sortBy(keys)).map((key) => {
@@ -22,4 +22,4 @@ function genDiff(filename1, filename2) {
   return buidTree(filename1, filename2);
 }
 
-export default genDiff;
+export default getTree;
