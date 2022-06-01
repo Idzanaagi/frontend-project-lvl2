@@ -1,6 +1,11 @@
+import path from 'path';
 import { test, expect } from '@jest/globals';
 import * as fs from 'fs';
-import { getFilePath, getDiff } from '../src/index.js';
+import getDiff from '../src/index.js';
+
+export const fileExtension = (file) => path.extname(file).split('.')[1];
+export const getFilePath = (file) => path.resolve(process.cwd(), file);
+export const readFile = (file) => fs.readFileSync(getFilePath(file), 'utf-8');
 
 const nestedFileResult = fs.readFileSync(`${getFilePath('__fixtures__/resultNested.txt')}`, 'utf-8');
 const nestedJson = getDiff('__fixtures__/file1.json', '__fixtures__/file2.json');
